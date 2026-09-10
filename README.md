@@ -25,7 +25,7 @@ modern fine-tune, TTA 10-crop vote, plus C2PA/SD-watermark/classical side signal
 - About **2 GB free disk** (setup downloads the Python runtime, ML libraries, and ~150 MB of model weights; the finished folder is ~1.4 GB).
 - Internet connection **for setup only**. After that, everything works offline (except the Image URL tab, which obviously needs the network to fetch the link).
 - A GPU is optional. Any DirectX 12 / CUDA GPU speeds things up; otherwise the CPU is used.
-- Git is optional. Setup uses it for one small extra package and simply skips that step with a warning if git is missing.
+- No other tools needed. Setup bundles its own portable Python, portable git, and the `uv` package manager — you don't need Python, git, or anything else pre-installed.
 
 ## Quickstart
 
@@ -41,7 +41,7 @@ Enter the folder:
 cd MyDetector
 ```
 
-Run setup (downloads the portable Python runtime, installs libraries, downloads model weights):
+Run setup (downloads portable Python, portable git, and `uv`, installs libraries, downloads model weights):
 
 ```
 setup.bat
@@ -137,9 +137,10 @@ Your images never leave your machine. There is no upload, no account, no telemet
 
 - **Setup failed?** Read the red error line, check your internet connection, and just run `setup.bat` again — it resumes and repairs.
 - **Start completely over?** Delete the `python-portable\` folder and run `setup.bat` again.
-- **"Optional requirements failed" warning?** You don't have git installed. Everything else works; only the extra C2PA library check is skipped.
+- **"Optional requirements failed" warning?** Setup couldn't fetch a small extra package (it needs to reach GitHub). Everything else works; only the extra C2PA library check is skipped. Re-run setup later to pick it up.
 - **`setup.ps1` won't run?** Windows script policy may block it. Run `powershell -ExecutionPolicy Bypass -File setup.ps1`.
 - **Port 7860 already in use?** Close the other program using it, then run `ui.bat` again.
+- **Stuck on CPU, no GPU?** At the end of setup, look for the `GPU: [...]` line. If it says `NONE detected`, your machine has no DirectX 12 GPU for DirectML and CPU is expected. If you *do* have a GPU but still see CPU only, re-run `setup.bat` — it detects a shadowed onnxruntime build and restores the GPU one. In the app, Engine `auto` then picks the GPU.
 - **Windows SmartScreen warning?** These are plain local scripts. Choose "More info" → "Run anyway" if you trust the source you cloned from.
 - **Models keep re-downloading?** A file below its expected size is treated as incomplete and fetched again — let that run finish once.
 
@@ -155,6 +156,8 @@ After setup, the folder contains:
 - `requirements-portable.txt` — core libraries; `requirements-optional.txt` — best-effort extras.
 - `model/` — downloaded weights (not in git, recreated by setup).
 - `python-portable/` — downloaded Python runtime + libraries (not in git, recreated by setup).
+- `git-portable/` — downloaded portable git used by setup (not in git, recreated by setup).
+- `tools/` — downloaded `uv` package manager used by setup (not in git, recreated by setup).
 - `test_images/` — small sample images to try (see `test_images/SOURCES.md`).
 
 ## Honest limits (measured, 2026 studies)

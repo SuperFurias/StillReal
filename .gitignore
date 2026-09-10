@@ -1,5 +1,8 @@
 # Portable runtime (600MB+, recreated by setup.bat, never commit)
 python-portable/
+# Portable git + uv (recreated by setup.bat, never commit)
+git-portable/
+tools/
 # Model weights (150MB, GitHub 100MB limit, use setup + LFS if you fork with weights)
 model/*.onnx
 model/*.pth
@@ -16,3 +19,5 @@ py-embed.zip
 Thumbs.db
 # Local test outputs
 *.csv
+# Suggested clone folder from README quickstart (in case someone clones inside the repo)
+MyDetector/

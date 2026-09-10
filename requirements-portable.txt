@@ -1,6 +1,11 @@
 # Pinned portable deps (Python 3.12.10 embed). Install via setup.bat, not by hand.
 gradio==5.44.1
-onnxruntime==1.29.0
+# NOTE: only the DirectML build is listed on purpose. onnxruntime and
+# onnxruntime-directml install the SAME files, so listing both lets one
+# silently shadow the other - and if the stock build wins, the GPU provider
+# disappears and everything runs CPU-only. The DirectML build also ships
+# CPUExecutionProvider, so CPU-only machines keep working.
+# Keep ORT_DML_VER in setup.bat / $ortWant in setup.ps1 in sync with this pin.
 onnxruntime-directml==1.24.4
 pillow==11.3.0
 numpy==2.5.3
