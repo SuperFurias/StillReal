@@ -1,0 +1,17 @@
+# Portable runtime (600MB+, recreated by setup.bat, never commit)
+python-portable/
+# Model weights (150MB, GitHub 100MB limit, use setup + LFS if you fork with weights)
+model/*.onnx
+model/*.pth
+# Python caches / temp
+__pycache__/
+*.pyc
+*.pyo
+tmp_readme.md
+py-embed.zip
+# Gradio / OS junk
+*.log
+.DS_Store
+Thumbs.db
+# Local test outputs
+*.csv

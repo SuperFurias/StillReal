@@ -1,0 +1,13 @@
+# Pinned portable deps (Python 3.12.10 embed). Install via setup.bat, not by hand.
+gradio==5.44.1
+onnxruntime==1.29.0
+onnxruntime-directml==1.24.4
+pillow==11.3.0
+numpy==2.5.3
+opencv-python-headless==5.0.0.93
+PyWavelets==1.10.0
+invisible-watermark==0.2.0
+pandas==2.3.3
+requests==2.34.2
+c2pacheck @ git+https://github.com/danraveh-ai/c2pacheck.git
+# note: invisible-watermark pulls torch CPU (~120MB) for rivaGan import; dwtDct path used here is CPU-only.
