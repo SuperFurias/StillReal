@@ -14,11 +14,38 @@ Under the hood: Community Forensics ViT-S ensemble (4803 generators, 2.7M images
 modern fine-tune, TTA 10-crop vote, GPU (DirectML/CUDA) with CPU fallback, plus C2PA/SD-watermark/classical side signals.
 
 ## Quickstart (fresh clone)
+
+Clone and enter the folder:
+
 ```
 git clone https://github.com/SuperFurias/StillReal.git MyDetector
+```
+
+```
 cd MyDetector
-setup.bat        # or setup.ps1 — builds python-portable/, pip installs requirements-portable.txt, downloads model/*.onnx
-ui.bat           # opens http://127.0.0.1:7860
+```
+
+Run setup (builds `python-portable/`, installs `requirements-portable.txt`, downloads `model/*.onnx`):
+
+```
+setup.bat
+```
+
+Or with PowerShell:
+
+```
+setup.ps1
+```
+
+Launch the UI (`http://127.0.0.1:7860`):
+
+```
+ui.bat
+```
+
+Or run the CLI directly:
+
+```
 run.bat photo.jpg --model ensemble --threshold 0.5
 ```
 First setup downloads ~800MB (Python embed + torch CPU + onnx + 147MB weights). After that the folder is movable offline.
