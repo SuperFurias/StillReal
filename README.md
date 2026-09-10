@@ -15,7 +15,7 @@ modern fine-tune, TTA 10-crop vote, GPU (DirectML/CUDA) with CPU fallback, plus 
 
 ## Quickstart (fresh clone)
 ```
-git clone <your-repo-url> MyDetector
+git clone https://github.com/SuperFurias/StillReal.git MyDetector
 cd MyDetector
 setup.bat        # or setup.ps1 — builds python-portable/, pip installs requirements-portable.txt, downloads model/*.onnx
 ui.bat           # opens http://127.0.0.1:7860
