@@ -1,0 +1,4 @@
+# Optional portable extras. Installed best-effort by setup.bat/setup.ps1:
+# failure here warns and continues (the app degrades gracefully without them).
+# c2pacheck needs `git` on PATH at install time (git+https URL).
+c2pacheck @ git+https://github.com/danraveh-ai/c2pacheck.git

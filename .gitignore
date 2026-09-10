@@ -3,6 +3,7 @@ python-portable/
 # Model weights (150MB, GitHub 100MB limit, use setup + LFS if you fork with weights)
 model/*.onnx
 model/*.pth
+model/*.part
 # Python caches / temp
 __pycache__/
 *.pyc

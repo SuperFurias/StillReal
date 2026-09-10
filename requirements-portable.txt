@@ -9,5 +9,6 @@ PyWavelets==1.10.0
 invisible-watermark==0.2.0
 pandas==2.3.3
 requests==2.34.2
-c2pacheck @ git+https://github.com/danraveh-ai/c2pacheck.git
+# Optional extras (need git at install time) live in requirements-optional.txt
+# and are best-effort: the app runs without them (C2PA lib check skipped).
 # note: invisible-watermark pulls torch CPU (~120MB) for rivaGan import; dwtDct path used here is CPU-only.

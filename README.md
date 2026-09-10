@@ -38,7 +38,7 @@ First setup downloads ~800MB (Python embed + torch CPU + onnx + 147MB weights). 
 ## Repo layout (what to commit)
 ```
 app.py detect.py forensic.py download_models.py
-requirements-portable.txt setup.bat setup.ps1 run.bat run.ps1 ui.bat ui.ps1
+requirements-portable.txt requirements-optional.txt setup.bat setup.ps1 run.bat run.ps1 ui.bat ui.ps1
 model/            # gitignored weights (downloaded by setup)
 python-portable/  # gitignored runtime (built by setup)
 test_images/      # tiny samples, see notices
